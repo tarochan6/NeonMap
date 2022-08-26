@@ -3,6 +3,7 @@ package domain;
 import java.util.Date;
 
 public class Neon {
+private String name;
 private Integer id;
 private Integer memberId;
 private String memberName;
@@ -11,6 +12,12 @@ private Date registered;
 private String note;
 
 
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
 public Integer getId() {
 	return id;
 }
