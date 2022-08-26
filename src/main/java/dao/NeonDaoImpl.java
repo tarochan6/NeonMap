@@ -19,11 +19,11 @@ public class NeonDaoImpl implements NeonDao {
 	}
 	
 	@Override
-	public List<Neon> findByAll(Neon neons) throws Exception {
+	public List<Neon> findAll() throws Exception {
 		List<Neon> neon = new ArrayList<>();
 		try	(Connection con = ds.getConnection()){
 			String sql = "SELECT neons.*,"
-					+ " members.name AS members_name FROM neons"
+					+ " members.name AS member_name FROM neons"
 					+ " JOIN members ON neons.member_id = members.id ORDER BY registered DESC";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();

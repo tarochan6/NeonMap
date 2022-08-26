@@ -7,10 +7,14 @@ import javax.sql.DataSource;
 public class DaoFactory {
 
 public static NeonDao createNeonDao() {
-	return new NeonDaoImpl(getDateSource());
+	return new NeonDaoImpl(getDataSource());
 }
 	
-
+/*
+public static MemberDao createMemberDao () {
+	return new MemberDaoImpl(getDateSource());
+}
+*/
 
 private static DataSource getDataSource() {
 	InitialContext ctx = null;

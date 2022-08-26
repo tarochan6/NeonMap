@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DaoFactory;
+import dao.NeonDao;
 import domain.Neon;
 
 /**
@@ -32,14 +33,17 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		List<Neon> neons = null;
+	
 		try {
-			neons = DaoFactory.createNeonDao().findByAll();
+			NeonDao neonDao = DaoFactory.createNeonDao();
+			List<Neon> neons = neonDao.findAll();
+			request.setAttribute("neons", neons);
+			request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
 		}catch (Exception e) {
-			e.printStackTrace();
+			throw new ServletException(e);
 		}
-request.setAttribute("neons", neons);
-request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
+
+
 
 	}
 

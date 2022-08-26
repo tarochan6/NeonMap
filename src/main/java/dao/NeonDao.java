@@ -6,7 +6,7 @@ import domain.Neon;
 
 public interface NeonDao {
 	
-List<Neon> findByAll(Neon neons) throws Exception;
+List<Neon> findAll() throws Exception;
 
 Neon findById(int id, int userId) throws Exception;
 Neon findByMember(int userId)throws Exception;
