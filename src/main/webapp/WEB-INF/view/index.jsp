@@ -4,11 +4,28 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+
+
+<c:import url="parts/commonCss.jsp" />
+
 <title>TITLE</title>
-<link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
+
+
+
+
 </head>
 <body>
-<iframe src="https://www.google.com/maps/d/embed?mid=1ond_Pc_ve1GbUDlGbPJaDX3KxpDrHUU&ehbc=2E312F" width="640" height="480"></iframe>
+
+
+ 
+<div style="text-align:center;">
+<h1 class="logo text-center my-3 fw-normal">NeonMap</h1>
+<iframe src="https://www.google.com/maps/d/embed?mid=1ond_Pc_ve1GbUDlGbPJaDX3KxpDrHUU&ehbc=2E312F" width="640" height="480" style="border-radius: 30px; border: 1px solid;"></iframe>
+
+
+<div class="my-3"><a class="btn btn-primary" href="login" role="button">ログインページへ</a></div>
+<div class="my-3"><a class="btn btn-success" href="signup" role="button">メンバー登録ページへ</a></div>
+</div>
+
 </body>
 </html>
