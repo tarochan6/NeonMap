@@ -4,17 +4,18 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+
 public class DaoFactory {
 
 public static NeonDao createNeonDao() {
 	return new NeonDaoImpl(getDataSource());
 }
 	
-/*
+
 public static MemberDao createMemberDao () {
-	return new MemberDaoImpl(getDateSource());
+	return new MemberDaoImpl(getDataSource());
 }
-*/
+
 
 private static DataSource getDataSource() {
 	InitialContext ctx = null;

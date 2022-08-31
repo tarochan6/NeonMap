@@ -13,12 +13,17 @@
 <title>ユーザー登録 - CowBirthdaylist</title>
 </head>
 <body>
-<div class="container mt-5">
+
+<div class="dark">
+<h1 class="neon text-center mb-3 fw-normal">NeonMap</h1>
+</div>
+        <h2 class="text-center">メンバー登録</h2>
+<div class="container mt-3">
   <div class="row">
     <div class="col-lg-4 offset-lg-4">
+
       <form action="" method="post">
-      <h1 class="logo text-center mb-3 fw-normal">なああ</h1>
-      <h2 class="text-center">ユーザー登録</h2>
+  
       <c:if test="${!empty errors}">
       <div class="alert alert-danger" role="alert">
           <c:forEach items="${errors}" var="error" varStatus="vs">
@@ -43,9 +48,11 @@
         <label for="floatingPassword2">パスワード(確認用)</label>
       </div>
 
-
-      <input class="w-100 btn btn-lg btn-primary mb-3" type="submit" value="登録">
-       <div class="text-center"><a href="<%= request.getContextPath() %>/index" class="link-primary">トップページへ戻る</a></div>
+<div class="text-center">
+      <input class="text-center btn btn-dark my-3" type="submit" value="登録"></div>
+      <div class="text-center my-2"><a href="<%= request.getContextPath() %>/login" class="link-primary">ログインページへ戻る</a></div>
+       <div class="text-center my-2"><a href="<%= request.getContextPath() %>/index" class="link-primary">トップページへ戻る</a></div>
+     
       </form>
     </div>
   </div>

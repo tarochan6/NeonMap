@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;500;700;800&family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 
 
 body {
@@ -9,16 +9,18 @@ body {
 
 }
 
-.logo {
-font-family: 'Lobster', cursive;
-}
-
 .hide {
   display: none;
 }
 
-
-
-
-
-
+.dark{
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background: #010a01;
+}
+ .neon {
+ font-family: 'Neonderthaw', cursive;
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 20px #0cc, 0 0 10px #0cc, 0 0 10px #0ff, 0 0 60px #0ff;
+}

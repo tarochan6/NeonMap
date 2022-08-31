@@ -5,10 +5,12 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	
-<c:import url="parts/commonCss.jsp" />
-<c:import url="parts/commonJs.jsp" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<c:import url="../parts/commonCss.jsp" />
+<c:import url="../parts/commonJs.jsp" />
 
 <script src="<%=request.getContextPath()%>/js/chart-3.8.0.min.js"></script>
 <script type="text/javascript"
@@ -20,27 +22,13 @@
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-<title>NeonMap</title>
-
+<title>メンバーページ - NeonMap</title>
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
 </head>
-
 <body>
-	
 
-	<div class="dark">
-	<div class="text-center"><h1 class="neon">NeonMap</h1></div>
-	</div>
+<c:import url="../parts/header.jsp" />
 
-	
-	<div style="text-align: center;">
-		<iframe
-			src="https://www.google.com/maps/d/embed?mid=1ond_Pc_ve1GbUDlGbPJaDX3KxpDrHUU&ehbc=2E312F"
-			width="640" height="480"
-			style="border-radius: 30px; border: 1px solid;"></iframe>
-	</div>
-	
 	<div class="container mt-3">
 		<table id="fav-table" class="table">
 			<thead class="thead-dark">
@@ -73,20 +61,5 @@
 
 	</div>
 
-
-	<div class="text-center">
-		<div class="my-3">
-			<a class="btn btn-dark mb-3" href="login" role="button">会員用ページへ</a>
-		</div>
-
-	</div>
-
-
-	<script>
-		//テーブルのソート
-		$(document).ready(function() {
-			$('#fav-table').tablesorter();
-		});
-	</script>
 </body>
 </html>

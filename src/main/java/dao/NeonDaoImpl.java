@@ -38,8 +38,8 @@ public class NeonDaoImpl implements NeonDao {
 	}
 	
 	@Override
-	public Neon findByMember(int userId) throws Exception {
-		Neon neon = null;
+	public List<Neon> findByMember(int userId) throws Exception {
+		List<Neon> neon = new ArrayList<>();
 		try	(Connection con = ds.getConnection()){
 			String sql = "SELECT neons.*, members.name AS member_name FROM neons"
 					+ " JOIN members ON neons.member_id = members.id WHERE member_id = ? ORDER BY registered DESC";
@@ -47,7 +47,7 @@ public class NeonDaoImpl implements NeonDao {
 			stmt.setInt(1, userId);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				neon = mapToNeon(rs);
+				neon.add(mapToNeon(rs));
 			}
 		} catch (Exception e) {
 			throw e;
