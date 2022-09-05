@@ -79,12 +79,13 @@ public class NeonDaoImpl implements NeonDao {
 	@Override
 	public void insert(Neon neons) throws Exception {
 		try (Connection con = ds.getConnection()) {
-		String sql = "INSERT INTO neons (name, member_id, address, registered, note) VALUES (?, ?, ?, now(), ?)";
+		String sql = "INSERT INTO neons (name, member_id, address, registered, note) VALUES (?, ?, ?, now(), ?, ?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, neons.getName());
 		stmt.setInt(2, neons.getMemberId());
 		stmt.setString(3, neons.getAddress());
 		stmt.setString(4, neons.getNote());
+		stmt.setString(5, neons.getImg());
 		stmt.executeLargeUpdate();
 	}catch (Exception e) {
 		throw e;
@@ -95,13 +96,14 @@ public class NeonDaoImpl implements NeonDao {
 	@Override
 	public void update(Neon neons) throws Exception {
 		try (Connection con = ds.getConnection()) {
-			String sql = "UPDATE neons SET name = ?, address = ?, note = ? WHERE id = ? AND member_id = ?";
+			String sql = "UPDATE neons SET name = ?, address = ?, note = ?, img = ? WHERE id = ? AND member_id = ?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, neons.getName());
 			stmt.setString(2, neons.getAddress());
 			stmt.setString(3, neons.getNote());
-			stmt.setInt(4, neons.getId());
-			stmt.setInt(5, neons.getMemberId());
+			stmt.setString(4, neons.getImg());
+			stmt.setInt(5, neons.getId());
+			stmt.setInt(6, neons.getMemberId());
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw e;
@@ -132,6 +134,7 @@ public class NeonDaoImpl implements NeonDao {
 		neon.setAddress(rs.getString("address"));
 		neon.setRegistered(rs.getDate("registered"));
 		neon.setNote(rs.getString("note"));
+		neon.setImg(rs.getString("img"));
 		return neon;
 	}
 

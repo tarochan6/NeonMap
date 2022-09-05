@@ -5,22 +5,23 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	
+
 <c:import url="parts/commonCss.jsp" />
 <c:import url="parts/commonJs.jsp" />
 
 <script src="<%=request.getContextPath()%>/js/chart-3.8.0.min.js"></script>
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- フォントオーサム -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+	
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- テーブルソート -->
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js"></script>
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 
 <title>NeonMap</title>
 
@@ -28,11 +29,11 @@
 
 <body>
 	
-
+<header>
 	<div class="dark">
 	<div class="text-center"><h1 class="neon">NeonMap</h1></div>
 	</div>
-
+</header>
 	
 	<div style="text-align: center;">
 		<iframe
@@ -60,7 +61,7 @@
 						<td><c:out value="${neon.id}" /></td>
 						<td class="text-nowrap"><c:out value="${neon.name}" /></td>
 						<td><img
-							src="<%=request.getContextPath()%>/img/neon<c:out value="${neon.id}" />.jpg"
+							src="<%=request.getContextPath()%>/img/<c:out value="${neon.img}" />"
 							alt="" class="img-fluid rounded img-thumbnail"></td>
 						<td><c:out value="${neon.address}" /></td>
 						<td><c:out value="${neon.note}" /></td>

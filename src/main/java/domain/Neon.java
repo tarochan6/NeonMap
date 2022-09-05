@@ -10,6 +10,7 @@ private String memberName;
 private String address;
 private Date registered;
 private String note;
+private String img;
 
 
 public String getName() {
@@ -53,6 +54,12 @@ public String getNote() {
 }
 public void setNote(String note) {
 	this.note = note;
+}
+public String getImg() {
+	return img;
+}
+public void setImg(String img) {
+	this.img = img;
 }
 
 

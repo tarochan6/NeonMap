@@ -4,14 +4,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
+<c:import url="parts/commonCss.jsp" />
+<c:import url="parts/commonJs.jsp" />
+
+<script src="<%=request.getContextPath()%>/js/chart-3.8.0.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- フォントオーサム -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+	
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<c:import url="parts/commonCss.jsp" />
-
-<link rel="icon" href="<%=request.getContextPath()%>/img/favicon.ico" />
-
 
 <title>メンバーログイン - NeonMap</title>
 
@@ -44,7 +49,7 @@
 							for="floatingPassword">パスワード</label>
 					</div>
 				
-					<div class="text-center"><input class="btn btn-dark my-3 " type="submit"
+					<div class="text-center"><input class="w-100 btn-lg btn btn-dark my-3 " type="submit"
 						value="ログイン"></div>
 					<div class="text-center my-2"><a class="link-primary" href="<%= request.getContextPath() %>/signup">ユーザー登録を行う</a></div>
 					<div class="text-center my-2"><a class="link-primary" href="<%= request.getContextPath() %>/index">トップページへ戻る</a></div>
